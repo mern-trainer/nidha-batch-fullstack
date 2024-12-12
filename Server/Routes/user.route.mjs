@@ -5,6 +5,7 @@ import { Auth } from "../Middleware/auth.mjs"
 const userRoute = Router()
 
 userRoute.post("/signup", userController.signup)
-userRoute.get("/login", Auth, userController.login)
+userRoute.get("/login", userController.login)
+userRoute.get("/products", Auth, userController.products)
 
 export default userRoute
