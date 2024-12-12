@@ -8,7 +8,7 @@ const userSlice = createSlice({
         email: ""
     },
     reducers: {
-        createUser: (state, action) => { // {name: "", username: "", email: ""}
+        createUser: (state, action) => { 
             state.name = action.payload.name
             state.username = action.payload.username
             state.email = action.payload.email

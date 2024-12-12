@@ -19,10 +19,8 @@ const Login = () => {
         onSubmit: async (values) => {
             try {
                 const { data } = await api.get("/users/login", { params: values });
-                console.log(data.token)
                 localStorage.setItem("access_token", data.token)
                 dispatch(createUser(data.user))
-                console.log(data.user)
                 toast.success("Logged In")
                 navigate("/")
             } catch (err) {
