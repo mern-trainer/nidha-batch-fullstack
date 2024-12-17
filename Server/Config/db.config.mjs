@@ -5,7 +5,7 @@ env.config()
 
 const dbConnect = async () => {
     try {
-        const { connection } = await connect(process.env.MONGO_URL, {
+        const { connection } = await connect(process.env.MONGO_DB_CLOUD, {
             dbName: "user_auth"
         })
         const db = connection.db.databaseName

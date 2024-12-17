@@ -2,12 +2,13 @@ import { useEffect } from "react"
 import { api } from "../axios"
 import toast from "react-hot-toast"
 import { useNavigate } from "react-router"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { logoutUser } from "../Redux/userSlice"
 
 const HomePage = () => {
 
     const dispatch = useDispatch()
+    const { name, email, username } = useSelector(store => store.user)
 
     const handleClick = async () => {
         try {
@@ -31,6 +32,7 @@ const HomePage = () => {
     }
 
     return <div>
+        <div>{name} {email} {username}</div>
         <button onClick={handleLogout}>LogOut</button>
     </div>
 }
